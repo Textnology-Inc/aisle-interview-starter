@@ -1,845 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FroPro × WFM — New Flavor Launch Strategy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream: #FAFAF7;
-      --navy: #1A1A2E;
-      --accent: #E8472A;
-      --muted: #6B6B7A;
-      --border: rgba(26,26,46,0.08);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--cream);
-      color: var(--navy);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* ─── UTILITY ─────────────────────────────────── */
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
-    .label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ─── TOP BAR ─────────────────────────────────── */
-    .top-bar {
-      border-bottom: 1px solid var(--border);
-      padding: 14px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--cream);
-    }
-
-    .top-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .top-bar-logo {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
-
-    .top-bar-divider {
-      width: 1px;
-      height: 20px;
-      background: var(--border);
-    }
-
-    .top-bar-prepared {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-
-    .top-bar-right {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(232,71,42,0.08);
-      padding: 5px 12px;
-      border-radius: 4px;
-    }
-
-    /* ─── HERO ─────────────────────────────────────── */
-    .hero {
-      padding: 80px 0 60px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .hero-title {
-      font-size: clamp(36px, 5vw, 54px);
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.0;
-      letter-spacing: -0.01em;
-      color: var(--navy);
-      margin-bottom: 24px;
-    }
-
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 17px;
-      font-weight: 500;
-      color: var(--muted);
-      line-height: 1.55;
-      max-width: 480px;
-    }
-
-    .hero-images {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: -20px;
-      position: relative;
-      height: 320px;
-    }
-
-    .hero-images img {
-      height: 300px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .hero-img-left {
-      transform: translateX(20px) rotate(-4deg);
-      z-index: 1;
-    }
-
-    .hero-img-right {
-      transform: translateX(-20px) rotate(4deg);
-      z-index: 2;
-    }
-
-    /* ─── OPPORTUNITY ─────────────────────────────── */
-    .section {
-      padding: 72px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-header {
-      margin-bottom: 36px;
-    }
-
-    .section-title {
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .section-heading {
-      font-size: clamp(26px, 3.5vw, 36px);
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-    }
-
-    .opportunity-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
-    }
-
-    .opp-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px 24px;
-    }
-
-    .opp-card-num {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .opp-card-text {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.5;
-    }
-
-    /* ─── PROOF ────────────────────────────────────── */
-    .proof-section {
-      background: var(--navy);
-      padding: 80px 0;
-    }
-
-    .proof-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
-    .proof-title {
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 12px;
-    }
-
-    .proof-heading {
-      font-size: clamp(26px, 3.5vw, 36px);
-      font-weight: 800;
-      text-transform: uppercase;
-      color: white;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 48px;
-    }
-
-    .proof-heading span {
-      color: var(--accent);
-    }
-
-    .proof-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-
-    .stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 36px 28px;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: clamp(44px, 6vw, 64px);
-      font-weight: 800;
-      color: white;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .stat-number span {
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .proof-quote {
-      background: rgba(232,71,42,0.12);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 10px 10px 0;
-      padding: 28px 32px;
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .proof-quote-text {
-      font-size: 22px;
-      font-weight: 800;
-      color: white;
-      line-height: 1.3;
-      flex: 1;
-    }
-
-    .proof-quote-text em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .proof-quote-meta {
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-
-    /* ─── LAUNCH PLAN ─────────────────────────────── */
-    .plan-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .plan-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .plan-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--accent);
-    }
-
-    .plan-card-num {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .plan-card-title {
-      font-size: 18px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-
-    .plan-card-desc {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-
-    .plan-card-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--navy);
-      background: rgba(26,26,46,0.07);
-      padding: 5px 12px;
-      border-radius: 4px;
-    }
-
-    .plan-images {
-      display: flex;
-      gap: 16px;
-      margin-top: 40px;
-      align-items: flex-end;
-    }
-
-    .plan-images img {
-      height: 180px;
-      width: auto;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    /* ─── WHY NOW ─────────────────────────────────── */
-    .why-now {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .why-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 4px;
-    }
-
-    .why-bullets li {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.55;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .why-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .why-aside {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 24px;
-    }
-
-    .why-aside-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .why-aside-stat {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.6;
-    }
-
-    .why-aside-stat strong {
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    /* ─── ABOUT AISLE ─────────────────────────────── */
-    .about-section {
-      background: white;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 56px 0;
-    }
-
-    .about-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 40px;
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .about-label {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .about-logo {
-      height: 32px;
-      width: auto;
-    }
-
-    .about-text {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    /* ─── CTA ─────────────────────────────────────── */
-    .cta-section {
-      padding: 80px 0 60px;
-    }
-
-    .cta-inner {
-      text-align: center;
-    }
-
-    .cta-heading {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
-    }
-
-    .cta-sub {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 36px;
-    }
-
-    .cta-contacts {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--navy);
-      color: white;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-
-    .cta-contact:hover {
-      background: var(--accent);
-    }
-
-    .cta-contact-ghost {
-      background: transparent;
-      color: var(--navy);
-      border: 1.5px solid var(--border);
-    }
-
-    .cta-contact-ghost:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    /* ─── FOOTER ─────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-confidential {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .footer-date {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--muted);
-    }
-
-    /* ─── RESPONSIVE ──────────────────────────────── */
-    @media (max-width: 768px) {
-      .container { padding: 0 24px; }
-      .top-bar { padding: 12px 24px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-images { height: 220px; }
-      .hero-images img { height: 200px; }
-      .opportunity-body { grid-template-columns: 1fr; }
-      .proof-stats { grid-template-columns: 1fr; }
-      .proof-inner { padding: 0 24px; }
-      .proof-quote { flex-direction: column; gap: 16px; }
-      .plan-grid { grid-template-columns: 1fr; }
-      .why-now { grid-template-columns: 1fr; gap: 32px; }
-      .about-inner { grid-template-columns: 1fr; gap: 24px; padding: 0 24px; }
-      footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FroPro × WFM — New Flavor Launch Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAFAF7;
+    --navy: #1A1A2E;
+    --orange: #E8472A;
+    --navy-mid: #2A2A4A;
+    --text-muted: #6B7280;
+    --border: #E5E5E0;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--cream);
+    padding: 60px 40px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta img {
+    height: 36px;
+    width: auto;
+  }
+
+  .meta-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--border);
+  }
+
+  .prepared-for {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+
+  .hero-headline {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .hero-headline span {
+    color: var(--orange);
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+    font-weight: 400;
+    color: #4B5563;
+    max-width: 420px;
+    line-height: 1.7;
+  }
+
+  .hero-images {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+  }
+
+  .hero-images img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ─── PROOF SECTION ─── */
+  .proof-section {
+    background: var(--navy);
+    color: white;
+    padding: 64px 40px;
+    margin-top: 0;
+  }
+
+  .proof-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+
+  .section-label.light {
+    color: rgba(232, 71, 42, 0.9);
+  }
+
+  .proof-heading {
+    font-size: clamp(24px, 3.5vw, 38px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: white;
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 40px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 28px 24px;
+    border-radius: 4px;
+  }
+
+  .stat-number {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-number.orange { color: var(--orange); }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+
+  .proof-pullquote {
+    border-left: 3px solid var(--orange);
+    padding-left: 20px;
+  }
+
+  .proof-pullquote p {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  /* ─── OPPORTUNITY ─── */
+  .opportunity-section {
+    padding: 64px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .opp-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .section-heading {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .opp-body {
+    font-size: 17px;
+    color: #374151;
+    line-height: 1.75;
+  }
+
+  .opp-callout {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--orange);
+    border-radius: 6px;
+    padding: 28px;
+  }
+
+  .opp-callout-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  .opp-callout-stat {
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .opp-callout-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── LAUNCH PLAN ─── */
+  .plan-section {
+    background: white;
+    padding: 64px 40px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .plan-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .plan-header {
+    margin-bottom: 40px;
+  }
+
+  .initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .initiative-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    position: relative;
+    transition: transform 0.15s ease;
+  }
+
+  .initiative-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .initiative-card.priority {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .priority-badge {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+    background: var(--orange);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .card-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .initiative-card.priority .card-number {
+    color: rgba(255,255,255,0.45);
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .initiative-card.priority .card-title {
+    color: white;
+    font-size: 20px;
+  }
+
+  .card-body {
+    font-size: 13.5px;
+    color: #4B5563;
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .initiative-card.priority .card-body {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background: rgba(232, 71, 42, 0.1);
+    color: var(--orange);
+  }
+
+  .initiative-card.priority .card-tag {
+    background: rgba(232, 71, 42, 0.25);
+    color: #FF8B70;
+  }
+
+  .priority-data {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 20px;
+    align-self: center;
+  }
+
+  .priority-data-num {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .priority-data-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  /* ─── WHY NOW ─── */
+  .why-section {
+    padding: 64px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .why-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why-bullets li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .why-bullet-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .why-bullets li p {
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.65;
+  }
+
+  .why-bullets li strong {
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  /* ─── ABOUT + CTA ─── */
+  .bottom-section {
+    background: var(--navy);
+    color: white;
+    padding: 56px 40px;
+  }
+
+  .bottom-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(232, 71, 42, 0.9);
+    margin-bottom: 12px;
+  }
+
+  .about-text {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+
+  .cta-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .cta-heading {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .cta-emails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cta-email {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+    padding: 10px 20px;
+    background: rgba(232, 71, 42, 0.12);
+    border: 1px solid rgba(232, 71, 42, 0.25);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .cta-email:hover {
+    background: rgba(232, 71, 42, 0.22);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    padding: 16px 40px;
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { padding: 40px 24px 0; }
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .hero-images { display: none; }
+    .proof-section { padding: 48px 24px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .opportunity-section { padding: 48px 24px; }
+    .opp-layout { grid-template-columns: 1fr; gap: 32px; }
+    .plan-section { padding: 48px 24px; }
+    .initiatives-grid { grid-template-columns: 1fr; }
+    .initiative-card.priority { grid-column: span 1; grid-template-columns: 1fr; }
+    .why-section { padding: 48px 24px; }
+    .why-layout { grid-template-columns: 1fr; gap: 32px; }
+    .bottom-section { padding: 48px 24px; }
+    .bottom-inner { grid-template-columns: 1fr; gap: 40px; }
+    .footer { padding: 16px 24px; }
+  }
+
+  @media (max-width: 560px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .hero-meta { gap: 12px; }
+    .meta-divider { display: none; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- ─── TOP BAR ─────────────────────────────────── -->
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <img
-        src="https://gofropro.com/cdn/shop/files/FroPro_Logo_Black.png?v=1742660483"
-        alt="FroPro"
-        class="top-bar-logo"
-        onerror="this.style.display='none'"
-      />
-      <div class="top-bar-divider"></div>
-      <span class="top-bar-prepared">Prepared for Cortland Consulting — Internal Review</span>
-    </div>
-    <div class="top-bar-right">Confidential</div>
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-meta">
+    <img src="https://gofropro.com/cdn/shop/files/FroPro_Logo_90x.png?v=1617993066" alt="FroPro" onerror="this.style.display='none'">
+    <div class="meta-divider"></div>
+    <span class="prepared-for">Prepared for Cortland Consulting &middot; Internal Review</span>
   </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">New Flavor Launch Strategy &middot; Whole Foods Market</p>
+      <h1 class="hero-headline">FroPro<br><span>&times; WFM</span><br>Launch Plan</h1>
+      <p class="hero-tagline">A data-informed, multi-channel launch plan for FroPro's newest SKU at Whole Foods Market — powered by Aisle shopper intelligence.</p>
+    </div>
+    <div class="hero-images">
+      <img src="https://gofropro.com/cdn/shop/files/left-fropro-group.webp?crop=center&height=500&v=1743085785&width=549" alt="FroPro Products Left" loading="eager">
+      <img src="https://gofropro.com/cdn/shop/files/right-fropro-group.webp?crop=center&height=500&v=1743085795&width=549" alt="FroPro Products Right" loading="eager">
+    </div>
+  </div>
+</section>
 
-  <!-- ─── HERO ─────────────────────────────────────── -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <div class="hero-eyebrow">Launch Strategy · Whole Foods Market</div>
-          <h1 class="hero-title">
-            FroPro ×<br/>
-            <span>Whole Foods</span><br/>
-            New Flavor<br/>
-            Launch
-          </h1>
-          <p class="hero-sub">
-            A loyalty-first launch plan for FroPro's new flavor at Whole Foods Market.
-            Here's what we're recommending — and why the data backs it up.
-          </p>
+<!-- ─── PROOF ─── -->
+<section class="proof-section">
+  <div class="proof-inner">
+    <p class="section-label light">The Data &mdash; FroPro&rsquo;s Aisle Program</p>
+    <h2 class="proof-heading">The Shopper Base Is Real.<br>The Moment Is Now.</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">9,670</div>
+        <div class="stat-label">Total Shoppers<br>Enrolled</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number orange">2,065</div>
+        <div class="stat-label">Total Cashback<br>Redemptions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1,945</div>
+        <div class="stat-label">WFM Activations<br>(Single Campaign)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number orange">21%</div>
+        <div class="stat-label">Redemption Rate<br>When Active</div>
+      </div>
+    </div>
+    <div class="proof-pullquote">
+      <p>&ldquo;One campaign. 1,945 Whole Foods shoppers activated.&rdquo;</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OPPORTUNITY ─── -->
+<section class="opportunity-section">
+  <div class="opp-layout">
+    <div>
+      <p class="section-label">The Opportunity</p>
+      <h2 class="section-heading">Dormancy Is a<br>Timing Problem,<br>Not a Brand Problem.</h2>
+    </div>
+    <div>
+      <p class="opp-body">FroPro has 9,670 shoppers enrolled in their Aisle program. <strong>7,605 of them never claimed a cashback.</strong> The program went quiet &mdash; zero redemptions in the last 90 days, two signups. The shopper base didn&rsquo;t disappear. They just haven&rsquo;t had a reason to act.</p>
+      <p class="opp-body" style="margin-top: 16px;">The new flavor launch is that reason. Here&rsquo;s the 5-part plan to convert dormancy into velocity.</p>
+      <div style="margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="opp-callout">
+          <p class="opp-callout-label">Dormant Shoppers</p>
+          <p class="opp-callout-stat">7,605</p>
+          <p class="opp-callout-desc">Signed up, never redeemed &mdash; waiting for a reason</p>
         </div>
-        <div class="hero-images">
-          <img
-            src="https://gofropro.com/cdn/shop/files/left-fropro-group.webp?crop=center&height=500&v=1743085785&width=549"
-            alt="FroPro products"
-            class="hero-img-left"
-          />
-          <img
-            src="https://gofropro.com/cdn/shop/files/right-fropro-group.webp?crop=center&height=500&v=1743085795&width=549"
-            alt="FroPro products"
-            class="hero-img-right"
-          />
+        <div class="opp-callout">
+          <p class="opp-callout-label">WFM Proven Lever</p>
+          <p class="opp-callout-stat">1,945</p>
+          <p class="opp-callout-desc">WFM activations from one &ldquo;clear the shelves&rdquo; campaign</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── OPPORTUNITY ──────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-title">The Opportunity</div>
-        <h2 class="section-heading">New Flavor Launches Are<br/>a 30-Day Window</h2>
-      </div>
-      <div class="opportunity-body">
-        <div class="opp-card">
-          <div class="opp-card-num">30</div>
-          <div class="opp-card-text">
-            Days before the WFM buyer forms an opinion on velocity. First-month numbers determine reorders.
-          </div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-card-num">1–2</div>
-          <div class="opp-card-text">
-            Visits before a shopper decides whether a new SKU is worth repeating. Loyalty offers close that gap.
-          </div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-card-num">1×</div>
-          <div class="opp-card-text">
-            Shot at launch. You don't get to re-introduce a SKU at WFM — velocity in the first month is the whole game.
-          </div>
-        </div>
-      </div>
+<!-- ─── LAUNCH PLAN ─── -->
+<section class="plan-section">
+  <div class="plan-inner">
+    <div class="plan-header">
+      <p class="section-label">The 5-Part Launch Plan</p>
+      <h2 class="section-heading" style="max-width: 600px;">Five Moves.<br>One Launch Window.</h2>
     </div>
-  </section>
 
-  <!-- ─── PROOF ─────────────────────────────────────── -->
-  <section class="proof-section">
-    <div class="proof-inner">
-      <div class="proof-title">Proof It Works</div>
-      <h2 class="proof-heading">FroPro Has Already<br/><span>Done This at WFM</span></h2>
+    <div class="initiatives-grid">
 
-      <div class="proof-stats">
-        <div class="stat-card">
-          <div class="stat-number">9,<span>670</span></div>
-          <div class="stat-label">Total Shoppers in Program</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">1,<span>947</span></div>
-          <div class="stat-label">Total Cashback Redemptions</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">1,<span>945</span></div>
-          <div class="stat-label">WFM Shoppers Activated</div>
-        </div>
-      </div>
-
-      <div class="proof-quote">
-        <div class="proof-quote-text">
-          "One campaign. <em>1,945 Whole Foods shoppers</em> activated."
-        </div>
-        <div class="proof-quote-meta">Mission: Clear<br/>WFM Shelves Stat</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── LAUNCH PLAN ──────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-title">The Plan</div>
-        <h2 class="section-heading">4 Initiatives.<br/>Launch Day Through Week 4.</h2>
-      </div>
-
-      <div class="plan-grid">
-
-        <div class="plan-card">
-          <div class="plan-card-num">Initiative 01</div>
-          <div class="plan-card-title">WFM Launch Campaign</div>
-          <div class="plan-card-desc">
-            A targeted cashback offer for WFM shoppers: buy X of the new flavor, get Y back. Reduces purchase risk and drives trial velocity from day one.
-          </div>
-          <span class="plan-card-tag">Weeks 1–4 · Trial Driver</span>
-        </div>
-
-        <div class="plan-card">
-          <div class="plan-card-num">Initiative 02</div>
-          <div class="plan-card-title">Loyalty Ladder</div>
-          <div class="plan-card-desc">
-            After the first redemption, an automatic follow-up offer drives a second purchase. Converts a one-time trial buyer into a repeat customer.
-          </div>
-          <span class="plan-card-tag">Post-Redemption · Repeat Driver</span>
-        </div>
-
-        <div class="plan-card">
-          <div class="plan-card-num">Initiative 03</div>
-          <div class="plan-card-title">Aisle Offers Page</div>
-          <div class="plan-card-desc">
-            Feature the new flavor on Aisle's offers page. Captures discovery traffic from Aisle shoppers already browsing for deals — high-intent, low-cost reach.
-          </div>
-          <span class="plan-card-tag">Week 1+ · Discovery</span>
-        </div>
-
-        <div class="plan-card">
-          <div class="plan-card-num">Initiative 04</div>
-          <div class="plan-card-title">Store Locator</div>
-          <div class="plan-card-desc">
-            A WFM-specific store locator so shoppers can find the new flavor near them. Removes friction between intent and purchase.
-          </div>
-          <span class="plan-card-tag">Launch Day · Retail Activation</span>
-        </div>
-
-      </div>
-
-      <div class="plan-images">
-        <img
-          src="https://gofropro.com/cdn/shop/files/FroPro_12pk_ChocolateChipCookieDough_MK3_6_1500x.png?v=1759513166"
-          alt="FroPro Chocolate Chip Cookie Dough"
-        />
-        <img
-          src="https://gofropro.com/cdn/shop/files/FroPro_12pk_BirthdayCake_MK3_7_1500x.png?v=1759513963"
-          alt="FroPro Birthday Cake"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── WHY NOW ───────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="why-now">
+      <!-- Card 2: Re-engagement — PRIORITY, spans 2 cols -->
+      <div class="initiative-card priority">
+        <div class="priority-badge">Priority Move</div>
         <div>
-          <div class="section-title">Why Now</div>
-          <h2 class="section-heading" style="margin-bottom:28px;">First 30 Days<br/>Set Everything</h2>
-          <ul class="why-bullets">
-            <li>New flavor launches are a once-per-SKU moment. There's no soft re-launch.</li>
-            <li>Velocity in the first month signals to the WFM buyer whether the SKU earns its shelf space.</li>
-            <li>FroPro has the program infrastructure in place — activating it on launch day is the move.</li>
-            <li>A loyalty offer running now: "Buy 3 Get 1" (22 signups, active). The audience is warm.</li>
-          </ul>
+          <p class="card-number">Initiative 02</p>
+          <span class="card-icon">&#128242;</span>
+          <h3 class="card-title">Re-engagement<br>Activation</h3>
+          <p class="card-body">Re-engagement is configured in Aisle but copy isn&rsquo;t approved yet &mdash; which means 7,605 non-redeemers are sitting untouched. One SMS to this dormant base when the new flavor hits shelves = instant, measurable redemption volume. This fires Week 1.</p>
+          <span class="card-tag">Highest Leverage</span>
         </div>
-        <div>
-          <div class="why-aside" style="margin-bottom:20px;">
-            <div class="why-aside-label">Peak Performance</div>
-            <div class="why-aside-stat">
-              FroPro's Aisle program hit <strong>304 signups in a single month</strong> (April 2025). That's what an activated campaign looks like.
-            </div>
-          </div>
-          <div class="why-aside">
-            <div class="why-aside-label">Active Right Now</div>
-            <div class="why-aside-stat">
-              "Buy 3 Get 1" campaign — <strong>22 signups and counting</strong>. The infrastructure is live. The audience is building.
-            </div>
-          </div>
+        <div class="priority-data">
+          <p class="priority-data-num">7,605</p>
+          <p class="priority-data-label">Shoppers enrolled but never redeemed &mdash; ready to activate with one message</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ─── ABOUT AISLE ──────────────────────────────── -->
-  <section class="about-section">
-    <div class="about-inner">
-      <div>
-        <div class="about-label">About Aisle</div>
-        <img
-          src="https://www.gotoaisle.com/wp-content/uploads/2023/08/aisle-logo-dark.png"
-          alt="Aisle"
-          class="about-logo"
-          onerror="this.alt='Aisle'"
-        />
+      <!-- Card 1: WFM Campaign -->
+      <div class="initiative-card">
+        <p class="card-number">Initiative 01</p>
+        <span class="card-icon">&#127978;</span>
+        <h3 class="card-title">WFM Launch Campaign</h3>
+        <p class="card-body">Dedicated cashback offer at Whole Foods for the new flavor. Repeat the &ldquo;mission: clear WFM shelves&rdquo; playbook that drove 1,945 activations. This is the proven lever &mdash; run it first, run it hard.</p>
+        <span class="card-tag">Weeks 1&ndash;4</span>
       </div>
-      <p class="about-text">
-        Aisle is an in-store loyalty platform that drives trial and repeat for CPG brands through receipt-based cashback. Brands like FroPro use Aisle to activate shoppers at specific retailers and turn buyers into loyalists — with full visibility into who bought, where, and how often.
-      </p>
-    </div>
-  </section>
 
-  <!-- ─── CTA ───────────────────────────────────────── -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-inner">
-        <h2 class="cta-heading">Ready to Activate?</h2>
-        <p class="cta-sub">Reach out to the Aisle team to finalize campaign structure and launch timing.</p>
-        <div class="cta-contacts">
-          <a href="mailto:reggie@gotoaisle.com" class="cta-contact">
-            reggie@gotoaisle.com
-          </a>
-          <a href="mailto:contact@aisle.com" class="cta-contact cta-contact-ghost">
-            contact@aisle.com
-          </a>
-        </div>
+      <!-- Card 3: Store Locator -->
+      <div class="initiative-card">
+        <p class="card-number">Initiative 03</p>
+        <span class="card-icon">&#128205;</span>
+        <h3 class="card-title">Aisle Store<br>Locator</h3>
+        <p class="card-body">FroPro sends shoppers to their own store finder, but doesn&rsquo;t have an Aisle-hosted Store Locator. Adding one means WFM discovery happens inside the Aisle ecosystem &mdash; trackable, attributable, and tied directly to the cashback offer.</p>
+        <span class="card-tag">Close the Loop</span>
+      </div>
+
+      <!-- Card 4: Offers Page -->
+      <div class="initiative-card">
+        <p class="card-number">Initiative 04</p>
+        <span class="card-icon">&#128269;</span>
+        <h3 class="card-title">Aisle Offers Page<br>Feature</h3>
+        <p class="card-body">FroPro isn&rsquo;t on the Aisle Offers Page. Getting the new flavor featured captures discovery traffic &mdash; shoppers already browsing for deals who haven&rsquo;t found FroPro yet. Zero lift required to get there.</p>
+        <span class="card-tag">New Discovery</span>
+      </div>
+
+      <!-- Card 5: Loyalty Ladder -->
+      <div class="initiative-card">
+        <p class="card-number">Initiative 05</p>
+        <span class="card-icon">&#128260;</span>
+        <h3 class="card-title">Loyalty Ladder</h3>
+        <p class="card-body">A post-redemption offer turns a first-time new-flavor buyer into a repeat customer. The 21% redemption rate proves the base responds when prompted. A two-step ladder for the new SKU builds long-term purchase habit.</p>
+        <span class="card-tag">Build Repeat</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY NOW ─── -->
+<section class="why-section">
+  <div class="why-layout">
+    <div>
+      <p class="section-label">Why Now</p>
+      <h2 class="section-heading">The Window<br>Is 30 Days.</h2>
+    </div>
+    <ul class="why-bullets">
+      <li>
+        <div class="why-bullet-dot"></div>
+        <p><strong>New flavor launches are a 30-day decision window.</strong> WFM buyers decide in the first visit or two. Miss the moment and the SKU gets marked as underperformer before the shopper base even knows it exists.</p>
+      </li>
+      <li>
+        <div class="why-bullet-dot"></div>
+        <p><strong>7,605 FroPro shoppers haven&rsquo;t activated yet</strong> &mdash; they&rsquo;re enrolled, they know the brand, and they&rsquo;re waiting for a reason. A new flavor with a cashback is that reason.</p>
+      </li>
+      <li>
+        <div class="why-bullet-dot"></div>
+        <p><strong>Three Aisle products are untapped.</strong> Re-engagement, an Aisle Store Locator, and the Offers Page are gaps that can be closed in days &mdash; each one directly accelerates the launch.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── ABOUT + CTA ─── -->
+<section class="bottom-section">
+  <div class="bottom-inner">
+    <div>
+      <p class="about-label">About Aisle</p>
+      <p class="about-text">Aisle is an in-store loyalty platform that drives trial and repeat for CPG brands through receipt-based cashback. 9,670 FroPro shoppers are already enrolled &mdash; the infrastructure is built. The launch plan activates it.</p>
+    </div>
+    <div class="cta-box">
+      <h3 class="cta-heading">Ready to Activate<br>the Launch Plan?</h3>
+      <div class="cta-emails">
+        <a href="mailto:sean@gotoaisle.com" class="cta-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          sean@gotoaisle.com
+        </a>
+        <a href="mailto:tiffin@gotoaisle.com" class="cta-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          tiffin@gotoaisle.com
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── FOOTER ────────────────────────────────────── -->
-  <footer>
-    <span class="footer-confidential">Confidential — For Internal Review Only</span>
-    <span class="footer-date">Prepared by Aisle · April 2026</span>
-  </footer>
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <p>Confidential &mdash; For Internal Review &middot; Cortland Consulting &middot; Prepared by Aisle &middot; April 2026</p>
+</footer>
 
 </body>
 </html>
